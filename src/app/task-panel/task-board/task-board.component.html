@@ -1,0 +1,25 @@
+<div class="taskbar rounded-5">
+  <div class="row my-3">
+    <div class="col-9 px-4 my-2">
+      <input
+        type="text"
+        class="form-control rounded-5 task"
+        placeholder="New task"
+        aria-label="New task"
+        aria-describedby="enter-new-task"
+        #taskContent
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 px-4 pb-2">
+      <select class="form-select task rounded-5" #selectPriority>
+        <option value="no-priority"></option>
+        <option value="imp-urgent">Important and urgent</option>
+        <option value="imp-not-urgent">Important but not urgent</option>
+        <option value="not-imp-urgent">Not important but urgent</option>
+        <option value="not-imp-not-urgent">Not important and not urgent</option>
+      </select>
+    </div>
+  </div>
+</div>
