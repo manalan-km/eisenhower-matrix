@@ -1,0 +1,45 @@
+.taskbar {
+  border: solid;
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(103, 65, 17, 0.85) 50%,
+    rgba(252, 172, 72, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(103, 65, 17, 0.85) 50%,
+    rgba(252, 172, 72, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(103, 65, 17, 0.85) 50%,
+    rgba(252, 172, 72, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#674111",endColorstr="#fcac48",GradientType=1);
+}
+.task {
+  border-radius: 20px;
+  border: none;
+  background-color: #d9d9d92d;
+  color: black;
+}
+
+button {
+  background-color: rgba(103, 65, 17, 0);
+  border: none;
+  width: 0;
+}
+
+button:hover{
+  color:white
+}
+.bi.bi-rocket-takeoff {
+  color: black;
+}
+.bi.bi-trash3 {
+  color: black;
+}
+
+.task-panel {
+  border: solid;
+}
