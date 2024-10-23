@@ -17,7 +17,7 @@ export class TaskCreatorComponent implements OnInit {
 
   constructor(private taskService: TaskService){}
   addNewTask(task:HTMLInputElement,priority:HTMLSelectElement) {
-    const newTask : Task = {
+    const newTask = {
       TaskContent: task.value,
       TaskPriority: priority.value as Priority
     } 
