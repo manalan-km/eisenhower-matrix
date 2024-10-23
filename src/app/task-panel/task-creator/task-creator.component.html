@@ -1,4 +1,5 @@
 <div class="taskbar rounded-5">
+  <form [formGroup]="taskForm">
   <div class="row">
     <div class="col-9 ps-4 py-2">
       <input
@@ -9,6 +10,10 @@
         aria-describedby="enter-new-task"
         #taskContent
       />
+      @let taskControl = taskForm.get('task');
+      @if (taskControl?.hasError('required')) { 
+        <div class="alert alert-danger rounded-5 my-1 col-5">Describe your task!</div>
+      }
     </div>
   </div>
   <div class="row pb-2">
@@ -32,4 +37,5 @@
       </button>
     </div>
   </div>
+  </form>
 </div>
