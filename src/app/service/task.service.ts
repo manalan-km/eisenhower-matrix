@@ -9,20 +9,20 @@ export class TaskService {
   private tasks : Task[]
   constructor() { 
     this.tasks = [
-      {
+      {id: 1,
         TaskContent: "task 1",
         TaskPriority: "imp-not-urgent"
       },
-      {
+      {id: 2,
         TaskContent: "task 2",
         TaskPriority: "imp-urgent"
       }
       ,
-      {
+      {id: 3,
         TaskContent: "task 3",
         TaskPriority: "not-imp-not-urgent"
       },
-      { 
+      { id: 4,
         TaskContent: "task4",
         TaskPriority: "not-imp-urgent"
       }

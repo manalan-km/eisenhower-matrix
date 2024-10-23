@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../service/task.service';
 import { Task } from '../../../model/Task';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-task-board',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './task-board.component.html',
   styleUrl: './task-board.component.css'
 })
@@ -17,5 +18,9 @@ export class TaskBoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.createdTasks = this.taskService.getTask()
+  }
+
+  meow(id:number) { 
+    console.log('Task ID:',id)
   }
 }
