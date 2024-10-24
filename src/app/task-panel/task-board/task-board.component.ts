@@ -17,10 +17,15 @@ export class TaskBoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.createdTasks = this.taskService.getTask()
+    this.createdTasks = this.taskService.getTasks()
   }
 
-  meow(id:number) { 
-    console.log('Task ID:',id)
+  getTasks() { 
+    this.createdTasks = this.taskService.getTasks()
+  }
+
+  removeTask(id:number) { 
+    this.taskService.removeTask(id)
+    this.getTasks()
   }
 }
