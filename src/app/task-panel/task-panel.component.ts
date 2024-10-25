@@ -9,6 +9,7 @@ import { TaskBoardComponent } from "./task-board/task-board.component";
   templateUrl: './task-panel.component.html',
   styleUrl: './task-panel.component.css'
 })
+
 export class TaskPanelComponent {
 
 }
