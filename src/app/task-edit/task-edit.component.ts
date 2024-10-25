@@ -44,6 +44,7 @@ export class TaskEditComponent {
       TaskContent: task.value,
       TaskPriority: priority.value as Priority
     } 
+    
     this.taskService.updateTasks( edittedTask, this.id )
   }
 
