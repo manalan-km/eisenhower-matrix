@@ -3,7 +3,6 @@ import { TaskService } from '../../service/task.service';
 import { Priority, Task } from '../../../model/Task';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PRIORITY } from '../../constants/constants';
 
 @Component({
   selector: 'app-task-creator',
@@ -15,17 +14,8 @@ import { PRIORITY } from '../../constants/constants';
 export class TaskCreatorComponent implements OnInit {
 
   taskForm!: FormGroup
-  taskPriorities
-  constructor(private taskService: TaskService){
-    this.taskPriorities = PRIORITY
-  }
-  
-  ngOnInit(): void {
-    this.taskForm = new FormGroup({ 
-      task: new FormControl('', [Validators.required])
-    })
-  }
 
+  constructor(private taskService: TaskService){}
   addNewTask(task:HTMLInputElement,priority:HTMLSelectElement) {
     const newTask = {
       TaskContent: task.value,
@@ -33,14 +23,11 @@ export class TaskCreatorComponent implements OnInit {
     } 
     this.taskService.addTasks( newTask )
     
-    this.clearTask(task,priority)
   }
-
-  clearTask(task:HTMLInputElement,priority:HTMLSelectElement) {
-    task.value = ''
-    priority.value = 'no-priority'
-    
+  ngOnInit(): void {
+    this.taskForm = new FormGroup({ 
+      task: new FormControl('', [Validators.required])
+    })
   }
-  
 
 }
