@@ -1,4 +1,4 @@
-.taskbar {
+.editBox { 
   background: rgb(96, 53, 189);
   background: -moz-linear-gradient(
     315deg,
@@ -17,13 +17,10 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6035bd",endColorstr="#2c1857",GradientType=1);
 }
-.task { 
-  border-radius: 20px;
-  border: none;
-  background-color: #d9d9d92d;
-  color: black;
-}
-.task-text { 
-  color: black;
-  background-color: orange;
+
+.inputField { 
+    border-radius: 20px;
+    border: none;
+    background-color: #d9d9d92d;
+    color: black;
 }
