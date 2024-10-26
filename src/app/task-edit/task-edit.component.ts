@@ -9,43 +9,40 @@ import { PRIORITY } from '../constants/constants';
 @Component({
   selector: 'app-task-edit',
   standalone: true,
-  imports: [RouterModule,CommonModule,ReactiveFormsModule],
+  imports: [RouterModule, CommonModule, ReactiveFormsModule],
   templateUrl: './task-edit.component.html',
-  styleUrl: './task-edit.component.css'
+  styleUrl: './task-edit.component.css',
 })
 export class TaskEditComponent {
+  id: number;
+  taskPriorities;
+  selectedTask: Task;
+  taskEditForm!: FormGroup;
 
-  id:number
-  taskPriorities
-  selectedTask : Task
-  taskEditForm!: FormGroup
-
-  constructor (
+  constructor(
     private activatedRoute: ActivatedRoute,
-    private taskService: TaskService
+    private taskService: TaskService,
   ) {
-    this.id = this.activatedRoute.snapshot.params['id']
-    this.selectedTask = this.taskService.getTask(this.id)!
+    this.id = this.activatedRoute.snapshot.params['id'];
+    this.selectedTask = this.taskService.getTask(this.id)!;
 
-    console.log(this.selectedTask)
+    console.log(this.selectedTask);
 
-    this.taskPriorities = PRIORITY
-    
-    this.taskEditForm = new FormGroup({ 
-      task: new FormControl('', [Validators.required])
-    })
-    
-    this.taskEditForm.setValue({task: this.selectedTask.TaskContent})
-    
+    this.taskPriorities = PRIORITY;
+
+    this.taskEditForm = new FormGroup({
+      task: new FormControl('', [Validators.required]),
+    });
+
+    this.taskEditForm.setValue({ task: this.selectedTask.TaskContent });
   }
- 
-  editTask(task:HTMLInputElement,priority:HTMLSelectElement) {
+
+  editTask(task: HTMLInputElement, priority: HTMLSelectElement) {
     const edittedTask = {
       TaskContent: task.value,
-      TaskPriority: priority.value as Priority
-    } 
-    
-    this.taskService.updateTasks( edittedTask, this.id )
-  }
+      TaskPriority: priority.value as Priority,
+    };
 
+    this.taskService.updateTasks(edittedTask, this.id);
+  }
 }
