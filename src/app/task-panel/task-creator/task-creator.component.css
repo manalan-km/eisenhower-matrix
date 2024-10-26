@@ -30,8 +30,8 @@ button {
   width: 0;
 }
 
-button:hover{
-  color:white
+button:hover {
+  color: white;
 }
 .bi.bi-rocket-takeoff {
   color: black;

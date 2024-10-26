@@ -8,24 +8,23 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './task-board.component.html',
-  styleUrl: './task-board.component.css'
+  styleUrl: './task-board.component.css',
 })
 export class TaskBoardComponent implements OnInit {
-  createdTasks: Task[] = []
+  createdTasks: Task[] = [];
 
-  constructor (private taskService : TaskService) { 
-  }
+  constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {
-    this.createdTasks = this.taskService.getTasks()
+    this.createdTasks = this.taskService.getTasks();
   }
 
-  getTasks() { 
-    this.createdTasks = this.taskService.getTasks()
+  getTasks() {
+    this.createdTasks = this.taskService.getTasks();
   }
 
-  removeTask(id:number) { 
-    this.taskService.removeTask(id)
-    this.getTasks()
+  removeTask(id: number) {
+    this.taskService.removeTask(id);
+    this.getTasks();
   }
 }

@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './imp-urg.component.html',
-  styleUrl: './imp-urg.component.css'
+  styleUrl: './imp-urg.component.css',
 })
-export class ImpUrgComponent {
-
-}
+export class ImpUrgComponent {}

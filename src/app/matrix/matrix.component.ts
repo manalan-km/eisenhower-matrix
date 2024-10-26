@@ -6,8 +6,6 @@ import { ImpUrgComponent } from './imp-urg/imp-urg.component';
   standalone: true,
   imports: [ImpUrgComponent],
   templateUrl: './matrix.component.html',
-  styleUrl: './matrix.component.css'
+  styleUrl: './matrix.component.css',
 })
-export class MatrixComponent {
-
-}
+export class MatrixComponent {}
