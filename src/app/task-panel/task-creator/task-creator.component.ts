@@ -2,12 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../service/task.service';
 import { Priority, Task } from '../../../model/Task';
 import { CommonModule } from '@angular/common';
-import {
-  FormControl,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PRIORITY } from '../../constants/constants';
 
 @Component({

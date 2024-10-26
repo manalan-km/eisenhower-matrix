@@ -1,11 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Priority, Task } from '../../model/Task';
 import { TaskService } from '../service/task.service';

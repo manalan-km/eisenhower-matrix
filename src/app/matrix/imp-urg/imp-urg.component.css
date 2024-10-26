@@ -12,21 +12,9 @@
 }
 #imp-urgent {
   background: rgb(0, 217, 35);
-  background: -moz-linear-gradient(
-    45deg,
-    rgba(0, 217, 35, 1) 0%,
-    rgba(0, 115, 19, 1) 61%
-  );
-  background: -webkit-linear-gradient(
-    45deg,
-    rgba(0, 217, 35, 1) 0%,
-    rgba(0, 115, 19, 1) 61%
-  );
-  background: linear-gradient(
-    45deg,
-    rgba(0, 217, 35, 1) 0%,
-    rgba(0, 115, 19, 1) 61%
-  );
+  background: -moz-linear-gradient(45deg, rgba(0, 217, 35, 1) 0%, rgba(0, 115, 19, 1) 61%);
+  background: -webkit-linear-gradient(45deg, rgba(0, 217, 35, 1) 0%, rgba(0, 115, 19, 1) 61%);
+  background: linear-gradient(45deg, rgba(0, 217, 35, 1) 0%, rgba(0, 115, 19, 1) 61%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00d923",endColorstr="#007313",GradientType=1);
 }
 

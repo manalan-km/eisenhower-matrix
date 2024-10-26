@@ -17,21 +17,14 @@
       <div class="col-8 ps-4">
         <select class="form-select inputField rounded-5" #selectPriority>
           @for (priority of taskPriorities; track $index) {
-            <option
-              [selected]="priority.priority === selectedTask.TaskPriority"
-              value="{{ priority.priority }}"
-            >
+            <option [selected]="priority.priority === selectedTask.TaskPriority" value="{{ priority.priority }}">
               {{ priority.value }}
             </option>
           }
         </select>
       </div>
       <div class="col-1 mx-1">
-        <button
-          class="btn"
-          (click)="editTask(taskContent, selectPriority)"
-          [routerLink]="['']"
-        >
+        <button class="btn" (click)="editTask(taskContent, selectPriority)" [routerLink]="['']">
           <i class="bi bi-check"></i>
         </button>
       </div>
