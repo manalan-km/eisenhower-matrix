@@ -1,0 +1,39 @@
+
+  .scrollbar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(226, 211, 5, 0.637) rgba(255, 255, 255, 0);
+  }
+  #imp-not-urgent {
+    background: rgb(0, 217, 35);
+    background: -moz-linear-gradient(
+      45deg,
+      rgba(0, 217, 35, 1) 0%,
+      rgba(0, 115, 19, 1) 61%
+    );
+    background: -webkit-linear-gradient(
+      45deg,
+      rgba(0, 217, 35, 1) 0%,
+      rgba(0, 115, 19, 1) 61%
+    );
+    background: linear-gradient(
+      45deg,
+      rgba(0, 217, 35, 1) 0%,
+      rgba(0, 115, 19, 1) 61%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00d923",endColorstr="#007313",GradientType=1);
+  }
+  
+  .header {
+    font-size: 2rem;
+    text-align: left;
+    color:white;
+  }
+  
+  .card {
+    background-color: #478859;
+    border: none;
+    border-radius: 1rem;
+  }
+  
