@@ -1,15 +1,15 @@
-<div class="rounded-5 mx-2 scrollbar" id="imp-not-urgent">
-    <div class="row">
-      <div class="col-sm-12 mx-4 header">Not Urgent</div>
-      @for (task of meow; track $index) {
-          <div class="row">
-                <div class="card rounded-5 my-2 ">
-                      <div class=" matrix  card-body">
-                            This is some text within a card body.
-                      </div>
-                </div>
-          </div>
-          }
-    </div>
+<div class="rounded-5 scrollbar" id="imp-not-urgent">
+      <div class="row">
+        <div class="col-sm-12 mx-4 header">Urgent</div>
+        @for (task of INUTasks; track $index) {
+            <div class="row">
+                  <div class="card col-sm-11 rounded-5 mx-3 my-2 ">
+                        <div class=" matrix  card-body">
+                             {{task.TaskContent}}
+                        </div>
+                  </div>
+            </div>
+            }
+      </div>
 </div>
-  
+    
