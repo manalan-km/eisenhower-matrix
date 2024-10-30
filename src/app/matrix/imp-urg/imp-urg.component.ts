@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Priority, Task } from '../../../model/Task';
 import { TaskService } from '../../service/task.service';
 import { PRIORITY } from '../../constants/constants';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-imp-urg',
@@ -13,14 +14,21 @@ import { PRIORITY } from '../../constants/constants';
 export class ImpUrgComponent {
   
   //IU = Important and Urgent
-  IUTasks: Task[]
-  priority :Priority = "imp-urgent"  
-  meow
+  IUTasks: Task[] = []
+  priority :Priority = "imp-urgent" 
+  task$:Observable<Task[]>
+  private TASK_PRIORITY : Priority = 'imp-urgent'
 
   constructor (private taskService : TaskService) { 
-    this.IUTasks = this.taskService.getTasksByPriority(this.priority)
-    this.meow = [1,2,3,4,5]
-    console.log(this.IUTasks)
+    this.task$ = this.taskService.getTaskObservable()
+
+    this.task$.subscribe(tasks => { 
+      this.IUTasks = tasks.filter(
+        (task)=> {
+          return task.TaskPriority === this.TASK_PRIORITY
+        }
+      )
+    } )
   }
 
 }
