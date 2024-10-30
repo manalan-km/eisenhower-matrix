@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../../model/Task';
+import { Priority, Task } from '../../model/Task';
 
 @Injectable({
   providedIn: 'root'
@@ -35,10 +35,20 @@ export class TaskService {
     return this.tasks
   }
 
-  getTask(TaskId:number) { 
-    console.log(this.tasks[TaskId -1])
-    return this.tasks[TaskId - 1]
+  getTaskById(TaskId:number) { 
+    return this.tasks.find(
+      (task) => task.id === TaskId
+    )
     
+  }
+
+  getTasksByPriority(TaskPriority: Priority ) { 
+    const tasksInPriority = this.tasks.filter(
+      (task)=> {
+        return task.TaskPriority === TaskPriority
+      }
+    )
+    return tasksInPriority
   }
 
   updateTasks(task:Partial<Task>, taskId:number) {
