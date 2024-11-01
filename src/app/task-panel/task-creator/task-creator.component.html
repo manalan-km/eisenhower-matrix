@@ -1,35 +1,37 @@
 <div class="taskbar rounded-5">
   <form [formGroup]="taskForm">
-  <div class="row">
-    <div class="col-9 ps-4 py-2">
-      <input
-        type="text"
-        class="form-control rounded-5 task"
-        placeholder="New task"
-        aria-label="New task"
-        aria-describedby="enter-new-task"
-        #taskContent
-      />
+    <div class="row">
+      <div class="col-9 ps-4 py-2">
+        <input
+          type="text"
+          class="form-control rounded-5 task"
+          placeholder="New task"
+          aria-label="New task"
+          aria-describedby="enter-new-task"
+          #taskContent
+        />
+      </div>
     </div>
-  </div>
-  <div class="row pb-2">
-    <div class="col-8 ps-4">
-      <select class="form-select task rounded-5" #selectPriority>
-        @for (priority of taskPriorities; track $index) {
-          <option value="{{priority.priority}}">{{priority.value}}</option>
-        }
-      </select>
+    <div class="row pb-2">
+      <div class="col-8 ps-4">
+        <select class="form-select task rounded-5" #selectPriority>
+          @for (priority of taskPriorities; track $index) {
+            <option value="{{ priority.priority }}">
+              {{ priority.value }}
+            </option>
+          }
+        </select>
+      </div>
+      <div class="col-1 ps-2 mx-1">
+        <button class="btn ps-0" (click)="addNewTask(taskContent, selectPriority)">
+          <i class="bi bi-rocket-takeoff"></i>
+        </button>
+      </div>
+      <div class="col-1 ps-2 mx-1">
+        <button class="btn ps-0" (click)="clearTask(taskContent, selectPriority)">
+          <i class="bi bi-trash3"></i>
+        </button>
+      </div>
     </div>
-    <div class="col-1 ps-2 mx-1">
-      <button class="btn ps-0" (click)="addNewTask(taskContent,selectPriority)">
-        <i class="bi bi-rocket-takeoff"></i>
-      </button>
-    </div>
-    <div class="col-1 ps-2 mx-1">
-      <button class="btn ps-0" (click)="clearTask(taskContent,selectPriority)">
-        <i class="bi bi-trash3"></i>
-      </button>
-    </div>
-  </div>
   </form>
 </div>

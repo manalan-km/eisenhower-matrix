@@ -3,7 +3,7 @@ import { Task } from '../../model/Task';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
   private TaskId
@@ -33,7 +33,7 @@ export class TaskService {
   addTasks(task:Partial<Task>) {
     const newTask:Task = { 
       id: this.createTaskId(),
-      TaskContent : task.TaskContent!,
+      TaskContent: task.TaskContent!,
       TaskPriority: task.TaskPriority!,
     }
 

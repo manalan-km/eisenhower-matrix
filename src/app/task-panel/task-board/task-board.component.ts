@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
   standalone: true,
   imports: [RouterModule],
   templateUrl: './task-board.component.html',
-  styleUrl: './task-board.component.css'
+  styleUrl: './task-board.component.css',
 })
 export class TaskBoardComponent {
   createdTasks: Task[] = []

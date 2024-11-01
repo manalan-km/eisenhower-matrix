@@ -1,29 +1,17 @@
 .taskbar {
   background: rgb(96, 53, 189);
-  background: -moz-linear-gradient(
-    315deg,
-    rgba(96, 53, 189, 1) 0%,
-    rgba(44, 24, 87, 0.82) 69%
-  );
-  background: -webkit-linear-gradient(
-    315deg,
-    rgba(96, 53, 189, 1) 0%,
-    rgba(44, 24, 87, 0.82) 69%
-  );
-  background: linear-gradient(
-    315deg,
-    rgba(96, 53, 189, 1) 0%,
-    rgba(44, 24, 87, 0.82) 69%
-  );
+  background: -moz-linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
+  background: -webkit-linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
+  background: linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6035bd",endColorstr="#2c1857",GradientType=1);
 }
-.task { 
+.task {
   border-radius: 20px;
   border: none;
   background-color: #d9d9d92d;
   color: black;
 }
-.task-text { 
+.task-text {
   color: black;
   background-color: orange;
 }
