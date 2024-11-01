@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatrixComponent } from './matrix.component';
+import { ImpNotUrgComponent } from './imp-not-urg.component';
 
-describe('MatrixComponent', () => {
-  let component: MatrixComponent;
-  let fixture: ComponentFixture<MatrixComponent>;
+describe('ImpNotUrgComponent', () => {
+  let component: ImpNotUrgComponent;
+  let fixture: ComponentFixture<ImpNotUrgComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatrixComponent]
+      imports: [ImpNotUrgComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MatrixComponent);
+    fixture = TestBed.createComponent(ImpNotUrgComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,27 @@
+
+  .scrollbar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-color: rgba(226, 211, 5, 0.637) rgba(255, 255, 255, 0);
+  }
+  #imp-not-urgent {
+    background: rgb(96,53,189);
+    background: -moz-linear-gradient(315deg, rgba(96,53,189,1) 0%, rgba(3,65,221,1) 43%, rgba(21,86,215,1) 72%);
+    background: -webkit-linear-gradient(315deg, rgba(96,53,189,1) 0%, rgba(3,65,221,1) 43%, rgba(21,86,215,1) 72%);
+    background: linear-gradient(315deg, rgba(96,53,189,1) 0%, rgba(3,65,221,1) 43%, rgba(21,86,215,1) 72%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6035bd",endColorstr="#1556d7",GradientType=1);
+  }
+  
+  .header {
+    font-size: 2rem;
+    text-align: left;
+    color:white;
+  }
+  
+  .card {
+    background-color: #478859;
+    border: none;
+    border-radius: 1rem;
+  }
+  

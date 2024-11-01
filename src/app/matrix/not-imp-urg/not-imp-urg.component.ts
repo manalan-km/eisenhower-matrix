@@ -1,31 +1,31 @@
 import { Component } from '@angular/core';
 import { Priority, Task } from '../../../model/Task';
-import { TaskService } from '../../service/task.service';
-import { PRIORITY } from '../../constants/constants';
 import { Observable } from 'rxjs';
+import { TaskService } from '../../service/task.service';
 import { sortByPriority } from '../../../utils/task';
 
 @Component({
-  selector: 'app-imp-urg',
+  selector: 'app-not-imp-urg',
   standalone: true,
   imports: [],
-  templateUrl: './imp-urg.component.html',
-  styleUrl: './imp-urg.component.css'
+  templateUrl: './not-imp-urg.component.html',
+  styleUrl: './not-imp-urg.component.css'
 })
-export class ImpUrgComponent {
-  
+export class NotImpUrgComponent {
+
   //IU = Important and Urgent
-  IUTasks: Task[] = []
+  NIUTasks: Task[] = []
   priority :Priority = "imp-urgent" 
   task$:Observable<Task[]>
-  private TASK_PRIORITY : Priority = 'imp-urgent'
+  private TASK_PRIORITY : Priority = 'not-imp-urgent'
 
   constructor (private taskService : TaskService) { 
     this.task$ = this.taskService.getTaskObservable()
 
     this.task$.subscribe(tasks => { 
-      this.IUTasks = sortByPriority(tasks,this.TASK_PRIORITY)
+      this.NIUTasks = sortByPriority(tasks,this.TASK_PRIORITY)
     } )
   }
+
 
 }

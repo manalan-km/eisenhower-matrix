@@ -8,8 +8,9 @@ describe('ImpUrgComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ImpUrgComponent],
-    }).compileComponents();
+      imports: [ImpUrgComponent]
+    })
+    .compileComponents();
 
     fixture = TestBed.createComponent(ImpUrgComponent);
     component = fixture.componentInstance;

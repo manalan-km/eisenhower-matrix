@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../../service/task.service';
 import { Task } from '../../../model/Task';
 import { RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-task-board',
@@ -10,21 +11,16 @@ import { RouterModule } from '@angular/router';
   templateUrl: './task-board.component.html',
   styleUrl: './task-board.component.css',
 })
-export class TaskBoardComponent implements OnInit {
-  createdTasks: Task[] = [];
+export class TaskBoardComponent {
+  createdTasks: Task[] = []
+  task$: Observable<Task[]>
 
-  constructor(private taskService: TaskService) {}
-
-  ngOnInit(): void {
-    this.createdTasks = this.taskService.getTasks();
+  constructor (private taskService : TaskService) { 
+    this.task$ = taskService.getTaskObservable()
+    this.task$.subscribe ( tasks => this.createdTasks = tasks)
   }
 
-  getTasks() {
-    this.createdTasks = this.taskService.getTasks();
-  }
-
-  removeTask(id: number) {
-    this.taskService.removeTask(id);
-    this.getTasks();
+  removeTask(id:number) { 
+    this.taskService.removeTask(id)
   }
 }

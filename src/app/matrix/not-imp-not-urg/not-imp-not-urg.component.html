@@ -1,0 +1,15 @@
+<div class="rounded-5 scrollbar" id="not-imp-urgent">
+    <div class="row">
+      <div class="col-sm-12 mx-4 header">Urgent</div>
+      @for (task of NINUTasks; track $index) {
+          <div class="row">
+                <div class="card col-sm-11 rounded-5 mx-3 my-2 ">
+                      <div class=" matrix  card-body">
+                           {{task.TaskContent}}
+                      </div>
+                </div>
+          </div>
+          }
+    </div>
+</div>
+  
