@@ -1,10 +1,10 @@
-<div class="taskbar rounded-5">
+<div class="taskbar rounded-4">
   <form [formGroup]="taskForm">
     <div class="row">
       <div class="col-9 ps-4 py-2">
         <input
           type="text"
-          class="form-control rounded-5 task"
+          class="form-control rounded-4 task"
           placeholder="New task"
           aria-label="New task"
           aria-describedby="enter-new-task"
@@ -14,7 +14,7 @@
     </div>
     <div class="row pb-2">
       <div class="col-8 ps-4">
-        <select class="form-select task rounded-5" #selectPriority>
+        <select class="form-select task rounded-4" #selectPriority>
           @for (priority of taskPriorities; track $index) {
             <option value="{{ priority.priority }}">
               {{ priority.value }}

@@ -1,15 +1,35 @@
-<div class="rounded-5 scrollbar" id="not-imp-urgent">
-    <div class="row">
-      <div class="col-sm-12 mx-4 header">Urgent</div>
-      @for (task of NINUTasks; track $index) {
-          <div class="row">
-                <div class="card col-sm-11 rounded-5 mx-3 my-2 ">
-                      <div class=" matrix  card-body">
-                           {{task.TaskContent}}
-                      </div>
-                </div>
+<div class="scrollbar rounded-4 scrollbar" id="not-imp-not-urgent">
+  <div class="row">
+    <div class="col-sm-12 mx-4 header">Not important and not urgent</div>
+    @for (task of NINUTasks; track $index) {
+      <div class="row">
+        <div class="card task col-9 task rounded-4 mx-5 my-2">
+          <div class="matrix px-2 card-body">
+            {{ task.TaskContent }}
           </div>
-          }
-    </div>
+          <div class="row">
+            <div class="col-1 py-1 px-2">
+              <button class="btn p-1 ms-2 border border-dark">
+                <i class="bi bi-check"></i>
+              </button>
+            </div>
+            <div class="col-1 py-1 ms-3">
+              <button class="btn p-1 border border-dark">
+                <i class="bi bi-pencil"></i>
+              </button>
+            </div>
+            <div class="col-1 py-1 mx-2">
+              <button class="btn p-1 border border-dark">
+                <i class="bi bi-trash3"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    } @empty {
+      <div class="row">
+        <div class="card task col-9 rounded-4 mx-5 my-2">No Tasks!</div>
+      </div>
+    }
+  </div>
 </div>
-  
