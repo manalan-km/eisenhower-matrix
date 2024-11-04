@@ -1,10 +1,19 @@
-.taskbar {
+.taskboard {
   background: rgb(96, 53, 189);
   background: -moz-linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
   background: -webkit-linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
   background: linear-gradient(315deg, rgba(96, 53, 189, 1) 0%, rgba(44, 24, 87, 0.82) 69%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#6035bd",endColorstr="#2c1857",GradientType=1);
+  max-height: 50vh;
 }
+
+.scrollbar {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-color: rgba(226, 211, 5, 0.637) rgba(255, 255, 255, 0);
+}
+
 .task {
   border-radius: 20px;
   border: none;
@@ -14,4 +23,9 @@
 .task-text {
   color: black;
   background-color: orange;
+  background: rgb(255, 176, 0);
+  background: -moz-linear-gradient(315deg, rgba(255, 176, 0, 1) 0%, rgba(144, 157, 19, 0.5461706166841737) 69%);
+  background: -webkit-linear-gradient(315deg, rgba(255, 176, 0, 1) 0%, rgba(144, 157, 19, 0.5461706166841737) 69%);
+  background: linear-gradient(315deg, rgba(255, 176, 0, 1) 0%, rgba(144, 157, 19, 0.5461706166841737) 69%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffb000",endColorstr="#909d13",GradientType=1);
 }

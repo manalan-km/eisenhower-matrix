@@ -1,10 +1,13 @@
-<div class="taskbar my-3 col-8 rounded-5">
+<div class="taskboard scrollbar my-3 col-md-8 rounded-4">
   @for (task of createdTasks; track task.id) {
     <div class="row">
-      <div class="col-10 rounded-5 task my-3 ms-4 my-2">
+      <div class="col-10 rounded-4 task my-3 ms-4 my-2">
         <div class="py-2 px-1">
-          <p class="task-text rounded-5 col-9 px-2">{{ task.TaskContent }}</p>
-          <p class="task-text col-8 rounded-5 px-2">{{ task.TaskPriority }}</p>
+          <p class="task-text rounded-4 col-9 px-2">{{ task.TaskContent }}</p>
+          <p class="task-text col-8 rounded-4 px-2">{{ task.TaskPriority }}</p>
+          <button class="btn p-1 me-2 border border-dark">
+            <i class="bi bi-check"></i>
+          </button>
           <button class="btn p-1 me-2 border border-dark" [routerLink]="['/edit/', task.id]">
             <i class="bi bi-pencil"></i>
           </button>
@@ -16,9 +19,9 @@
     </div>
   } @empty {
     <div class="row">
-      <div class="col-10 rounded-5 task my-3 ms-4 my-2">
+      <div class="col-10 rounded-4 task my-3 ms-4 my-2">
         <div class="py-2 px-1">
-          <p class="task-text rounded-5 col-9 px-2">No Tasks!</p>
+          <p class="task-text rounded-4 col-9 px-2">No Tasks!</p>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
-<div class="editBox rounded-5">
+<div class="editBox rounded-4">
   <form [formGroup]="taskEditForm">
     <div class="row">
       <div class="col-9 ps-4 py-2">
         <input
           type="text"
-          class="form-control rounded-5 inputField"
+          class="form-control rounded-4 inputField"
           placeholder="New task"
           aria-label="New task"
           aria-describedby="enter-new-task"
@@ -15,7 +15,7 @@
     </div>
     <div class="row pb-2">
       <div class="col-8 ps-4">
-        <select class="form-select inputField rounded-5" #selectPriority>
+        <select class="form-select inputField rounded-4" #selectPriority>
           @for (priority of taskPriorities; track $index) {
             <option [selected]="priority.priority === selectedTask.TaskPriority" value="{{ priority.priority }}">
               {{ priority.value }}
