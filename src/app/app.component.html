@@ -1,10 +1,27 @@
-<div class="container-fluid">
+<div class="container-fluid mx-0">
+  <nav class="navbar-bg navbar ms-0">
+    <div class="row">
+      <div class="col-1 mx-1 mt-1">
+        <img src="../assets/favicon.ico" width="30" height="30" alt="" />
+      </div>
+      <div class="col-10">
+        <h3 style="color: goldenrod">Eisenhower Matrix</h3>
+      </div>
+    </div>
+  </nav>
+  <hr class="gradient" />
   <div class="row">
-    <div class="col-md-4 mt-3 helper-border">
+    <div class="col-md-4 my-3 helper-border">
       <router-outlet></router-outlet>
     </div>
-    <div class="col-md-8 mt-3">
+    <div class="col-md-8 my-3">
       <app-matrix></app-matrix>
+    </div>
+  </div>
+  <hr style="margin-top: 2rem;" class="gradient"/>
+  <div class="row">
+    <div class="col-sm-2 my-2">
+      <footer style="color: white;">Created by Manalan</footer>
     </div>
   </div>
 </div>
