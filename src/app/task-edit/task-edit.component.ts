@@ -16,17 +16,14 @@ import { PRIORITY } from '../constants/constants';
 export class TaskEditComponent {
   id: number;
   taskPriorities;
-  selectedTask: Task;
+  selectedTask!: Task;
   taskEditForm!: FormGroup;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private taskService: TaskService,
   ) {
-    this.id = this.activatedRoute.snapshot.params['id']
-    this.selectedTask = this.taskService.getTaskById(this.id)!
-
-    console.log(this.selectedTask);
+    this.id = this.activatedRoute.snapshot.params['id'];
 
     this.taskPriorities = PRIORITY;
 
@@ -34,6 +31,11 @@ export class TaskEditComponent {
       task: new FormControl('', [Validators.required]),
     });
 
+    this.updateFields();
+  }
+
+  updateFields() {
+    this.selectedTask = this.taskService.getTaskById(this.id)!;
     this.taskEditForm.setValue({ task: this.selectedTask.TaskContent });
   }
 
