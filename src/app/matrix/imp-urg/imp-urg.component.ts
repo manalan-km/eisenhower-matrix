@@ -30,4 +30,16 @@ export class ImpUrgComponent {
   removeTask(taskId: number) {
     this.taskService.removeTask(taskId);
   }
+
+  markAsCompleted(taskId: number) {
+    this.taskService.changeTaskStatus(taskId, 'completed');
+  }
+
+  markAsInProgress(taskId: number) {
+    this.taskService.changeTaskStatus(taskId, 'in-progress');
+  }
+
+  isTaskDone(taskId: number) {
+    return this.taskService.getTaskStatus(taskId) === 'completed';
+  }
 }
