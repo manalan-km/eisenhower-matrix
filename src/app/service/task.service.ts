@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../../model/Task';
+import { Task, TaskStatus } from '../../model/Task';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -64,10 +64,22 @@ export class TaskService {
     return index;
   }
 
+  getTaskStatus(taskId: number) {
+    const index = this.getTaskIndex(taskId);
+    return this.tasks[index].TaskStatus;
+  }
+
   updateTasks(task: Partial<Task>, taskId: number) {
     const index = this.getTaskIndex(taskId);
     this.tasks[index].TaskContent = task.TaskContent!;
     this.tasks[index].TaskPriority = task.TaskPriority!;
+
+    this.sendUpdate();
+  }
+
+  changeTaskStatus(taskId: number, taskStatus: TaskStatus) {
+    const index = this.getTaskIndex(taskId);
+    this.tasks[index].TaskStatus = taskStatus;
 
     this.sendUpdate();
   }

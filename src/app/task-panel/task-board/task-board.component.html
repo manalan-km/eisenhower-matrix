@@ -3,12 +3,28 @@
     <div class="row">
       <div class="col-10 rounded-4 task my-3 ms-4 my-2">
         <div class="py-2 px-1">
-          <p class="task-text rounded-4 col-9 px-2">{{ task.TaskContent }}</p>
+          <p class="task-text rounded-4 col-9 px-2">
+            @if (isTaskDone(task.id)) {
+              <s>{{ task.TaskContent }}</s>
+            } @else {
+              {{ task.TaskContent }}
+            }
+          </p>
           <p class="task-text col-8 rounded-4 px-2">{{ task.TaskPriority }}</p>
-          <button class="btn p-1 me-2 border border-dark">
-            <i class="bi bi-check"></i>
-          </button>
-          <button class="btn p-1 me-2 border border-dark" [routerLink]="['/edit/', task.id]">
+          @if (isTaskDone(task.id)) {
+            <button class="btn p-1 me-2 border border-dark" (click)="markAsInProgress(task.id)">
+              <i class="bi bi-plus"></i>
+            </button>
+          } @else {
+            <button class="btn p-1 me-2 border border-dark" (click)="markAsCompleted(task.id)">
+              <i class="bi bi-check"></i>
+            </button>
+          }
+          <button
+            class="btn p-1 me-2 border border-dark"
+            [disabled]="isTaskDone(task.id)"
+            [routerLink]="['/edit/', task.id]"
+          >
             <i class="bi bi-pencil"></i>
           </button>
           <button class="btn me-2 p-1 border border-dark" (click)="removeTask(task.id)" [routerLink]="['']">

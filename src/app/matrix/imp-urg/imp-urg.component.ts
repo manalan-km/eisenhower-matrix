@@ -4,28 +4,42 @@ import { TaskService } from '../../service/task.service';
 import { PRIORITY } from '../../constants/constants';
 import { Observable } from 'rxjs';
 import { sortByPriority } from '../../../utils/task';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-imp-urg',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './imp-urg.component.html',
-  styleUrl: './imp-urg.component.css'
+  styleUrl: './imp-urg.component.css',
 })
 export class ImpUrgComponent {
-  
   //IU = Important and Urgent
-  IUTasks: Task[] = []
-  priority :Priority = "imp-urgent" 
-  task$:Observable<Task[]>
-  private TASK_PRIORITY : Priority = 'imp-urgent'
+  IUTasks: Task[] = [];
+  priority: Priority = 'imp-urgent';
+  task$: Observable<Task[]>;
+  private TASK_PRIORITY: Priority = 'imp-urgent';
 
-  constructor (private taskService : TaskService) { 
-    this.task$ = this.taskService.getTaskObservable()
+  constructor(private taskService: TaskService) {
+    this.task$ = this.taskService.getTaskObservable();
 
-    this.task$.subscribe(tasks => { 
-      this.IUTasks = sortByPriority(tasks,this.TASK_PRIORITY)
-    } )
+    this.task$.subscribe((tasks) => {
+      this.IUTasks = sortByPriority(tasks, this.TASK_PRIORITY);
+    });
+  }
+  removeTask(taskId: number) {
+    this.taskService.removeTask(taskId);
   }
 
+  markAsCompleted(taskId: number) {
+    this.taskService.changeTaskStatus(taskId, 'completed');
+  }
+
+  markAsInProgress(taskId: number) {
+    this.taskService.changeTaskStatus(taskId, 'in-progress');
+  }
+
+  isTaskDone(taskId: number) {
+    return this.taskService.getTaskStatus(taskId) === 'completed';
+  }
 }

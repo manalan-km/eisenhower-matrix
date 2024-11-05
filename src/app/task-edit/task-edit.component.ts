@@ -16,7 +16,7 @@ import { PRIORITY } from '../constants/constants';
 export class TaskEditComponent {
   id: number;
   taskPriorities;
-  selectedTask: Task;
+  selectedTask!: Task;
   taskEditForm!: FormGroup;
 
   constructor(
@@ -34,6 +34,11 @@ export class TaskEditComponent {
       task: new FormControl('', [Validators.required]),
     });
 
+    this.updateFields();
+  }
+
+  updateFields() {
+    this.selectedTask = this.taskService.getTaskById(this.id)!;
     this.taskEditForm.setValue({ task: this.selectedTask.TaskContent });
   }
 
