@@ -12,14 +12,14 @@ export class TaskService {
 
   constructor() {
     this.tasks = [
-      { id: 1, TaskContent: 'task 1', TaskPriority: 'imp-not-urgent' },
-      { id: 2, TaskContent: 'task 2', TaskPriority: 'imp-urgent' },
-      { id: 3, TaskContent: 'task 3', TaskPriority: 'not-imp-not-urgent' },
-      { id: 4, TaskContent: 'task 4', TaskPriority: 'not-imp-urgent' },
-      { id: 5, TaskContent: 'task 5', TaskPriority: 'imp-not-urgent' },
-      { id: 6, TaskContent: 'task 6', TaskPriority: 'imp-urgent' },
-      { id: 7, TaskContent: 'task 7', TaskPriority: 'not-imp-not-urgent' },
-      { id: 8, TaskContent: 'task 8', TaskPriority: 'not-imp-urgent' },
+      { id: 1, TaskContent: 'task 1', TaskPriority: 'imp-not-urgent', TaskStatus: 'in-progress' },
+      { id: 2, TaskContent: 'task 2', TaskPriority: 'imp-urgent', TaskStatus: 'in-progress' },
+      { id: 3, TaskContent: 'task 3', TaskPriority: 'not-imp-not-urgent', TaskStatus: 'in-progress' },
+      { id: 4, TaskContent: 'task 4', TaskPriority: 'not-imp-urgent', TaskStatus: 'in-progress' },
+      { id: 5, TaskContent: 'task 5', TaskPriority: 'imp-not-urgent', TaskStatus: 'in-progress' },
+      { id: 6, TaskContent: 'task 6', TaskPriority: 'imp-urgent', TaskStatus: 'in-progress' },
+      { id: 7, TaskContent: 'task 7', TaskPriority: 'not-imp-not-urgent', TaskStatus: 'in-progress' },
+      { id: 8, TaskContent: 'task 8', TaskPriority: 'not-imp-urgent', TaskStatus: 'in-progress' },
     ];
 
     this.taskSubject = new BehaviorSubject<Task[]>(this.tasks);
@@ -39,6 +39,7 @@ export class TaskService {
       id: this.createTaskId(),
       TaskContent: task.TaskContent!,
       TaskPriority: task.TaskPriority!,
+      TaskStatus: 'in-progress',
     };
 
     this.tasks.push(newTask);
