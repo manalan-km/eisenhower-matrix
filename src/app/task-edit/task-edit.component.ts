@@ -23,8 +23,8 @@ export class TaskEditComponent {
     private activatedRoute: ActivatedRoute,
     private taskService: TaskService,
   ) {
-    this.id = this.activatedRoute.snapshot.params['id']
-    this.selectedTask = this.taskService.getTaskById(this.id)!
+    this.id = parseInt(this.activatedRoute.snapshot.params['id'], 10);
+    this.selectedTask = this.taskService.getTaskById(this.id)!;
 
     console.log(this.selectedTask);
 
